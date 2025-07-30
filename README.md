@@ -1,4 +1,4 @@
-# Prstuti Ai
+# Prastuti Ai
 
 Transform Documents into Stunning Presentations in Seconds Leverage the power of AI to automatically convert your documents into professionally designed PowerPoint presentations.
 
