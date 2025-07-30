@@ -3,17 +3,22 @@ from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.enum.text import PP_ALIGN
 from pptx.dml.color import RGBColor
+from dotenv import load_dotenv
 import os
 import fitz  # PyMuPDF
 import docx
 import re
 import requests
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Initialize Flask app
 app = Flask(__name__, static_folder='static')
 
 # === Claude 3 via OpenRouter ===
-OPENROUTER_API_KEY = "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" 
-CLAUDE_MODEL = "deepseek/deepseek-r1:free"
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+CLAUDE_MODEL = os.getenv("CLAUDE_MODEL")
 
 def call_claude(prompt):
     headers = {
